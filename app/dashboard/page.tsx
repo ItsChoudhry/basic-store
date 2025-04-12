@@ -1,11 +1,17 @@
-import { currentUser } from "@clerk/nextjs/server";
+"use client";
+
 import { redirect } from "next/navigation";
 import SignOut from "./SignOut";
 import { Suspense } from "react";
 import Link from "next/link";
+import { useUser } from "@clerk/nextjs";
 
-const Dashboard = async () => {
-  const user = await currentUser();
+const Dashboard = () => {
+  const { user, isLoaded } = useUser();
+
+  if (!isLoaded) {
+    return <div>Loading...</div>;
+  }
   if (!user) redirect("/sign-in");
 
   return (
