@@ -20,13 +20,6 @@ export default function RootLayout({
       }}
     >
       <html lang="en" className="dark">
-        <head>
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `((e,t,a,i,r,n,o,s)=>{let p=document.documentElement,d=["light","dark"];function l(t){(Array.isArray(e)?e:[e]).forEach(e=>{let a="class"===e,i=a&&n?r.map(e=>n[e]||e):r;a?(p.classList.remove(...i),p.classList.add(t)):p.setAttribute(e,t)}),s&&d.includes(t)&&(p.style.colorScheme=t)}if(i)l(i);else try{let e=localStorage.getItem(t)||a,i=o&&"system"===e?window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light":e;l(i)}catch(e){}})("class","theme","light","light",["light","dark"],null,true,true)`,
-            }}
-          />
-        </head>
         <body className="bg-gray-900 text-white">{children}</body>
       </html>
     </ClerkProvider>
