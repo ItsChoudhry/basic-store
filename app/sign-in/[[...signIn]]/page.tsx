@@ -6,12 +6,8 @@ export default function SignInPage() {
     <div className="flex flex-col items-center justify-center min-h-screen bg-blend-darken">
       <h1 className="text-3xl font-bold mb-6">basic store</h1>
       <SignIn
-        routing="path"
-        path="/sign-in"
-        signUpUrl="/sign-up"
         appearance={{
           baseTheme: dark,
-          variables: { colorBackground: "#1a1a1a" },
         }}
       />
     </div>
